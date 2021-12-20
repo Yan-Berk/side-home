@@ -1,0 +1,112 @@
+@use "variables";
+
+$image-max-height: 280;
+$image-max-width: 315;
+
+.property-listings {
+  box-sizing: border-box;
+  color: variables.$main-color;
+  display: grid;
+  max-width: variables.$max-width-px;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 38px 20px 59px;
+  grid-row-gap: 50px;
+  grid-column-gap: 5%;
+
+  @media (max-width: variables.$small-screen-size) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .property-listing {
+    box-sizing: border-box;
+    padding: 0;
+    max-width: #{$image-max-width}px;
+    width: 100%;
+
+    @media (max-width: variables.$small-screen-size) {
+      margin: 0 auto;
+    }
+
+    .photo-action {
+      position: relative;
+
+      .photo-wrapper {
+        border-radius: 4px;
+        overflow: hidden;
+        max-width: #{$image-max-width}px;
+        max-height: #{$image-max-height}px;
+        width: 100%;
+
+        img {
+          height: 100%;
+          aspect-ratio: calc(#{$image-max-height} / #{$image-max-width});
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .favorite {
+        background: none;
+        border: 0;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+
+        img {
+          width: 35px;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: nowrap;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+      margin: 16px 0 11px;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+
+      li {
+        border-right: 1px solid black;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        &:first-of-type {
+          padding-left: 0;
+        }
+
+        &:last-of-type {
+          border-right: 0;
+        }
+      }
+    }
+
+    .list-price {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 5px;
+    }
+
+    .address {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+
+    .list-date {
+      color: #979797;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 32px;
+      text-transform: capitalize;
+    }
+  }
+}

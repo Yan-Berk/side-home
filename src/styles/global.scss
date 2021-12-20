@@ -1,0 +1,41 @@
+@use "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header {
+  background-color: #F4F4F4;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  h1 {
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    max-width: variables.$max-width-px;
+    padding: 37px 20px 26px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: variables.$small-screen-size) {
+      font-size: 14px;
+      max-width: 315px;
+      padding: 12px 0 11px;
+    }
+  }
+}
